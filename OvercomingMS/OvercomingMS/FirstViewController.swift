@@ -15,6 +15,12 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func SubmitButton(_ sender: UIButton) {
+        TextOutput.text = TextInput.text;
+        TextInput.text = "";
+    }
+    @IBOutlet var TextInput: UITextField!
+    @IBOutlet var TextOutput: UITextView!
+    
 }
 
