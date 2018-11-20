@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611848AE21A37D4600AB1E3C /* DietPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611848AD21A37D4600AB1E3C /* DietPopupViewController.swift */; };
 		611DCF3021879E9A00588BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DCF2F21879E9A00588BCA /* AppDelegate.swift */; };
 		611DCF3221879E9A00588BCA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DCF3121879E9A00588BCA /* FirstViewController.swift */; };
 		611DCF3421879E9A00588BCA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611DCF3321879E9A00588BCA /* SecondViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		611848AD21A37D4600AB1E3C /* DietPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DietPopupViewController.swift; sourceTree = "<group>"; };
 		611DCF2C21879E9A00588BCA /* OvercomingMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OvercomingMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611DCF2F21879E9A00588BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		611DCF3121879E9A00588BCA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				611DCF2F21879E9A00588BCA /* AppDelegate.swift */,
 				611DCF3121879E9A00588BCA /* FirstViewController.swift */,
 				611DCF3321879E9A00588BCA /* SecondViewController.swift */,
+				611848AD21A37D4600AB1E3C /* DietPopupViewController.swift */,
 				611DCF3521879E9A00588BCA /* Main.storyboard */,
 				611DCF3821879EA200588BCA /* Assets.xcassets */,
 				611DCF3A21879EA200588BCA /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				611848AE21A37D4600AB1E3C /* DietPopupViewController.swift in Sources */,
 				611DCF3421879E9A00588BCA /* SecondViewController.swift in Sources */,
 				611DCF3021879E9A00588BCA /* AppDelegate.swift in Sources */,
 				611DCF3221879E9A00588BCA /* FirstViewController.swift in Sources */,
