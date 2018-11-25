@@ -22,20 +22,19 @@ class FirstViewController: UIViewController {
         if(inputString != ""){
             let sb = UIStoryboard(name: "Main", bundle: nil);
             let popup = sb.instantiateViewController(withIdentifier: "DietPopupView") as! DietPopupViewController;
-            popup.text = TextInput.text ?? "";
+            popup.FoodName = TextInput.text ?? "";
             self.present(popup, animated: true, completion: nil);
             
             TextInput.text = "";
         }
     }
     
-    //previous items should be kept track of, and listed here
-    @IBAction func HistoryTab(_ sender: UIButton) {
-    
-    }
-    
     //items marked as favorites by the user should be listed here
     @IBAction func FavoritesTab(_ sender: UIButton) {
+    
+    }
+    //previous items should be kept track of, and listed here
+    @IBAction func HistoryTab(_ sender: UIButton) {
     }
     
     @IBOutlet var TextInput: UITextField!
