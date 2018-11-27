@@ -8,14 +8,15 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.textField.delegate = self
     }
-
-    @IBAction func SubmitButton(_ sender: UIButton) {//present the modal view, and give it whatever you searched for if there is input
+    
+    func SubmitPressed(){
         let inputString: String = TextInput.text ?? "";
         TextInput.endEditing(true); //close keyboard
         
@@ -27,6 +28,17 @@ class FirstViewController: UIViewController {
             
             TextInput.text = "";
         }
+    }
+    @IBOutlet weak var textField: UITextField!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        SubmitPressed();
+        return false
+    }
+
+    @IBAction func SubmitButton(_ sender: UIButton) {//present the modal view, and give it whatever you searched for if there is input
+        SubmitPressed();
     }
     
     //items marked as favorites by the user should be listed here

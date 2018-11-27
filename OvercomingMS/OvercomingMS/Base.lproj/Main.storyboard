@@ -99,6 +99,7 @@
                     <connections>
                         <outlet property="TextInput" destination="f0k-gm-pjX" id="NFX-QK-CHP"/>
                         <outlet property="TextOutput" destination="uFE-E1-HWu" id="9xS-Fz-Nt3"/>
+                        <outlet property="textField" destination="f0k-gm-pjX" id="0dP-bf-Fgx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
