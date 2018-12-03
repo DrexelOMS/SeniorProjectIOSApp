@@ -26,15 +26,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-E1-HWu">
-                                <rect key="frame" x="16" y="371" width="343" height="237"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="237" id="5d1-ge-vsp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="f0k-gm-pjX">
                                 <rect key="frame" x="16" y="90" width="213" height="30"/>
                                 <nil key="textColor"/>
@@ -51,7 +42,7 @@
                                     <action selector="SubmitButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="XI2-fO-o9w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-M5-PVH">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-M5-PVH">
                                 <rect key="frame" x="16" y="328" width="80" height="45"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -73,38 +64,47 @@
                                     <action selector="HistoryTab:" destination="9pv-A4-QxB" eventType="touchUpInside" id="3ce-88-uiB"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i3w-WI-nMf">
+                                <rect key="frame" x="16" y="369" width="341" height="237"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="237" id="9fd-EL-apm"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f0k-gm-pjX" firstAttribute="top" secondItem="bcK-oh-fWT" secondAttribute="bottom" constant="10" id="0kt-lu-4EL"/>
                             <constraint firstItem="bcK-oh-fWT" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="66O-Hx-4oF"/>
                             <constraint firstItem="bcK-oh-fWT" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="H0j-3X-LZ8"/>
-                            <constraint firstItem="SOQ-M5-PVH" firstAttribute="leading" secondItem="uFE-E1-HWu" secondAttribute="leading" id="KRm-5L-EkN"/>
                             <constraint firstItem="bcK-oh-fWT" firstAttribute="leading" secondItem="f0k-gm-pjX" secondAttribute="leading" id="Lwz-8F-2Ww"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="uFE-E1-HWu" secondAttribute="bottom" constant="10" id="N1o-sw-Apj"/>
                             <constraint firstItem="903-0g-pLs" firstAttribute="top" secondItem="SOQ-M5-PVH" secondAttribute="top" id="QUr-v6-lvF"/>
-                            <constraint firstItem="bcK-oh-fWT" firstAttribute="trailing" secondItem="uFE-E1-HWu" secondAttribute="trailing" id="SsQ-IN-4Td"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="i3w-WI-nMf" secondAttribute="bottom" constant="12" id="VH5-BJ-B1v"/>
                             <constraint firstItem="bcK-oh-fWT" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="YWA-dk-gqr"/>
                             <constraint firstItem="903-0g-pLs" firstAttribute="leading" secondItem="SOQ-M5-PVH" secondAttribute="trailing" constant="8" symbolic="YES" id="co2-T9-PaD"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="u0P-hT-DBn" secondAttribute="trailing" constant="18" id="gQC-mv-0Zk"/>
                             <constraint firstItem="903-0g-pLs" firstAttribute="firstBaseline" secondItem="SOQ-M5-PVH" secondAttribute="baseline" id="gXC-z5-bNC"/>
+                            <constraint firstItem="i3w-WI-nMf" firstAttribute="trailing" secondItem="u0P-hT-DBn" secondAttribute="trailing" id="oNV-jz-zBW"/>
                             <constraint firstItem="SOQ-M5-PVH" firstAttribute="leading" secondItem="f0k-gm-pjX" secondAttribute="leading" id="rEa-y3-OEg"/>
                             <constraint firstItem="u0P-hT-DBn" firstAttribute="leading" secondItem="f0k-gm-pjX" secondAttribute="trailing" constant="25" id="uPF-QL-nW8"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="SOQ-M5-PVH" secondAttribute="bottom" constant="245" id="wZs-9H-gpi"/>
+                            <constraint firstItem="i3w-WI-nMf" firstAttribute="leading" secondItem="SOQ-M5-PVH" secondAttribute="leading" id="zfM-m1-fNy"/>
                             <constraint firstItem="f0k-gm-pjX" firstAttribute="top" secondItem="u0P-hT-DBn" secondAttribute="top" id="ziN-cF-YJi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Diet" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="FavButton" destination="SOQ-M5-PVH" id="qcY-nP-OU6"/>
+                        <outlet property="HistButton" destination="903-0g-pLs" id="rrO-VE-3Gs"/>
                         <outlet property="TextInput" destination="f0k-gm-pjX" id="NFX-QK-CHP"/>
-                        <outlet property="TextOutput" destination="uFE-E1-HWu" id="9xS-Fz-Nt3"/>
+                        <outlet property="myTableView" destination="i3w-WI-nMf" id="L4R-mO-9jn"/>
                         <outlet property="textField" destination="f0k-gm-pjX" id="0dP-bf-Fgx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746.25" y="-322.5"/>
+            <point key="canvasLocation" x="744.79999999999995" y="-323.38830584707648"/>
         </scene>
         <!--Diet Popup View Controller-->
         <scene sceneID="aMv-ob-SJH">

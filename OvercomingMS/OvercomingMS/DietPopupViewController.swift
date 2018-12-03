@@ -10,6 +10,10 @@ import UIKit
 
 class DietPopupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate{
     
+    var myName: String = "";
+    var myId: String = "";
+    var prevVC: FirstViewController!;
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return OptionNames.count; // your number of cell here
     }
@@ -23,6 +27,12 @@ class DietPopupViewController: UIViewController, UITableViewDelegate, UITableVie
     //when you select an option
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         TextBox.text = "Loading";
+        myName = OptionNames[indexPath.row];
+        myId = OptionIds[indexPath.row];
+        if(myName != ""){
+            HistoryItemNames.append(myName);
+            HistoryItemIds.append(myId);
+        }
         SearchNDB(ndbno: String(OptionIds[indexPath.row]))
     }
 
@@ -30,16 +40,23 @@ class DietPopupViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //close the popupView
     @IBAction func BackButton(_ sender: UIButton) {
-        dismiss(animated: true)
+        prevVC.tr();
+        dismiss(animated: true, completion: nil)
     }
     
     //add (or remove) item from the user's favorites
     @IBAction func FavoritesButton(_ sender: UIButton) {
-        
+        if(myName != ""){
+            FavItemNames.append(myName);
+            FavItemIds.append(myId);
+        }
     }
     
     var OptionNames: [String] = [];
     var OptionIds: [String] = [];
+    
+    var FromTableView: Bool = false;
+    var FromTableViewID: String = "";
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var TextBox: UITextView!
@@ -51,10 +68,16 @@ class DietPopupViewController: UIViewController, UITableViewDelegate, UITableVie
         
         TextBox.text = "Loading";
         
-        SearchFoodName();
+        if(!FromTableView){
+            SearchFoodName();
+        }
+        else{
+            SearchNDB(ndbno: FromTableViewID);
+        }
     }
     
     func SearchNDB(ndbno: String){
+        
         self.firstXML = false;
         let APIUrl = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=" + ndbno + "&type=f&format=xml&api_key=vhuS0ESO8hNsZ4JB3vpRc1ibIzDqbivrU8SZDCi3";
         let url = URL(string: APIUrl)!;
